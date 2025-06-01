@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Management Dashboard</h1>
+            <p>Manage your students with ease</p>
+        </header>
+
+        <main>
+            <!-- Student Form Section -->
+            <section class="form-section" id="formSection">
+                <h2>Add/Edit Student</h2>
+                <form id="studentForm" class="student-form">
+                    <div class="form-group">
+                        <label for="studentName">Name:</label>
+                        <input type="text" id="studentName" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentAge">Age:</label>
+                        <input type="number" id="studentAge" name="age" min="1" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentGrade">Grade:</label>
+                        <select id="studentGrade" name="grade" required>
+                            <option value="">Select Grade</option>
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="C">C</option>
+                            <option value="D">D</option>
+                            <option value="F">F</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="studentSubject">Subject:</label>
+                        <input type="text" id="studentSubject" name="subject" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn">Add Student</button>
+                        <button type="button" id="cancelBtn" style="display: none;">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Controls Section -->
+            <section class="controls-section">
+                <h2>Student List Controls</h2>
+                <div class="controls">
+                    <div class="search-filter">
+                        <input type="text" id="searchInput" placeholder="Search students...">
+                        <select id="gradeFilter">
+                            <option value="">All Grades</option>
+                            <option value="A">Grade A</option>
+                            <option value="B">Grade B</option>
+                            <option value="C">Grade C</option>
+                            <option value="D">Grade D</option>
+                            <option value="F">Grade F</option>
+                        </select>
+                    </div>
+                    <div class="sort-controls">
+                        <label for="sortBy">Sort by:</label>
+                        <select id="sortBy">
+                            <option value="name">Name</option>
+                            <option value="age">Age</option>
+                            <option value="grade">Grade</option>
+                            <option value="subject">Subject</option>
+                        </select>
+                        <button id="sortOrder" data-order="asc">↑ Ascending</button>
+                    </div>
+                    <div class="bulk-actions">
+                        <button id="clearAll" class="danger-btn">Clear All Students</button>
+                        <button id="exportData">Export Data</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Students List Section -->
+            <section class="list-section">
+                <h2>Students List (<span id="studentCount">0</span>)</h2>
+                <div id="studentsList" class="students-list">
+                    <div class="no-students">
+                        <p>No students found. Add your first student above!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal for confirmations -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Confirm Action</h3>
+            <p id="modalMessage">Are you sure?</p>
+            <div class="modal-actions">
+                <button id="modalConfirm" class="danger-btn">Confirm</button>
+                <button id="modalCancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
