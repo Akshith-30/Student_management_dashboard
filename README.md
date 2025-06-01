@@ -98,12 +98,12 @@ A clean, responsive, and interactive dashboard to manage student records in your
 
 ## Screenshots
 
-> *Add screenshots*
+> *![image](https://github.com/user-attachments/assets/02f21637-252d-4fc8-8565-2a0cfe05e713)*
 
 ---
 
 ## Demo
 
-> *link*
+> *[link to the deployed page](https://dynamic-parfait-4aecbe.netlify.app/)*
 
 
